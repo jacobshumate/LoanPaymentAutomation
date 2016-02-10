@@ -43,7 +43,7 @@ namespace LoanPaymentAutomation
 
             //Read File
             FileReader file = new FileReader();
-            file.ReadFile("e:/documents/visual studio 2015/Projects/LoanPaymentAutomation/LoanPaymentAutomation/info.txt");
+            file.ReadFile("e:/Documents/Programs/C#/LoanPaymentAutomationTests/info.txt");
 
             //Navigate to Loan Site
             PropertiesCollection.driver.Navigate().GoToUrl(file.info(11));
@@ -65,42 +65,5 @@ namespace LoanPaymentAutomation
 
             Log();
         }
-
-        //[SetUp]
-        //public void Initialize()
-        //{
-        //    //Initialize browser
-        //    PropertiesCollection.driver = new FirefoxDriver();
-        //    Console.WriteLine("Opened Browser");
-
-        //    //Navigate to Loan Site
-        //    PropertiesCollection.driver.Navigate().GoToUrl("");
-        //}
-
-        //[Test]
-        //public void ExecuteTest()
-        //{
-        //    //Read File
-        //    FileReader file = new FileReader();
-        //    file.ReadFile("e:/documents/visual studio 2015/Projects/LoanPaymentAutomation/LoanPaymentAutomation/info.txt");
-
-        //    //Login through 2 pages
-        //    LoginPage page1 = new LoginPage();
-        //    SecureLoginPage page2 = page1.Login(file);
-
-        //    //Make payments and submit
-        //    AccountSummaryPage page3 = page2.Submit(file);
-        //    MakeAPaymentPage page4 = page3.MakeAPayment();
-        //    PaymentPreviewPage page5 = page4.SubmitPayment(file);
-        //    //page5.btnSubmit.Click();
-        //}
-
-        //[TearDown]
-        //public void CleanUp()
-        //{
-        //    //Close browser
-        //    PropertiesCollection.driver.Close();
-        //    Console.WriteLine("Close the browser");
-        //}
     }
 }

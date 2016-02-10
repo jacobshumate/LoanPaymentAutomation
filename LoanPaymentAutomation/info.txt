@@ -1,12 +1,12 @@
-﻿jachshum
-sAvant!514
-9915104050
-05101989
-42.08
-14.30
-12.30
-13.57
-5.02
-5.02
-32.73
-https://login2.navient.com/CALM2/calm.do?sourceAppName=MYLSP
+﻿<user name>
+<password>
+<account number>
+<dob>
+<amount 1>
+<amount 2>
+<amount 3>
+<amount 4>
+<amount 5>
+<amount 6>
+<amount 7>
+<url>
