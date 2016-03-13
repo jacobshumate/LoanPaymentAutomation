@@ -9,18 +9,11 @@ using System.Threading.Tasks;
 
 namespace LoanPaymentAutomation
 {
-    class AccountSummaryPage
+    public class AccountSummaryPage : PageInitialization
     {
 
         //Initialize Current Page Elements
-        public AccountSummaryPage()
-        {
-            //Wait for page to load
-            WebDriverWait _wait = new WebDriverWait(PropertiesCollection.driver, new TimeSpan(0, 0, 30));
-            _wait.Until(d => d.FindElement(By.Id("btnMakePayment")));
-
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
+        public AccountSummaryPage(string id) : base(id) {}
 
         [FindsBy(How = How.Id, Using = "btnMakePayment")]
         public IWebElement btnMakePayment { get; set; }
@@ -30,7 +23,7 @@ namespace LoanPaymentAutomation
         {
             btnMakePayment.Click();
 
-            return new MakeAPaymentPage();
+            return new MakeAPaymentPage("txtAmount_0");
         }
     }
 }

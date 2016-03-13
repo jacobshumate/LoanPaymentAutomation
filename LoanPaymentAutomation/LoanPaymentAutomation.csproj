@@ -75,6 +75,7 @@
     <Compile Include="FileReader.cs" />
     <Compile Include="LoginPage.cs" />
     <Compile Include="MakeAPaymentPage.cs" />
+    <Compile Include="PageInitialization.cs" />
     <Compile Include="PaymentPreviewPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />

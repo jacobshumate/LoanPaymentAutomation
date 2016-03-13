@@ -10,18 +10,11 @@ using System.Threading.Tasks;
 
 namespace LoanPaymentAutomation
 {
-    class SecureLoginPage
+    public class SecureLoginPage : PageInitialization
     {
 
         //Initialize Current Page Elements
-        public SecureLoginPage()
-        {
-            //Wait for page to load
-            WebDriverWait _wait = new WebDriverWait(PropertiesCollection.driver, new TimeSpan(0, 0, 30));
-            _wait.Until(d => d.FindElement(By.Id("account-number")));
-
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
+        public SecureLoginPage(string id) : base(id) {}
 
         [FindsBy(How = How.Id, Using = "account-number")]
         public IWebElement txtAccountNumber { get; set; }
@@ -39,7 +32,7 @@ namespace LoanPaymentAutomation
             txtDOB1.SendKeys(fileObj.info(3));
             btnSubmit.Click();
 
-            return new AccountSummaryPage();
+            return new AccountSummaryPage("btnMakePayment");
         }
     }
 }

@@ -9,17 +9,11 @@ using System.Threading.Tasks;
 
 namespace LoanPaymentAutomation
 {
-    class MakeAPaymentPage
+    public class MakeAPaymentPage : PageInitialization
     {
 
         //Initialize Current Page Elements
-        public MakeAPaymentPage()
-        {
-            //Wait for page to load
-            WebDriverWait _wait = new WebDriverWait(PropertiesCollection.driver, new TimeSpan(0, 0, 30));
-            _wait.Until(d => d.FindElement(By.Id("txtAmount_0")));
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
+        public MakeAPaymentPage(string id) : base(id) {}
 
         [FindsBy(How = How.Id, Using = "txtAmount_0")]
         public IWebElement txtAmount1 { get; set; }

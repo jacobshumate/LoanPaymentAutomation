@@ -49,7 +49,7 @@ namespace LoanPaymentAutomation
             PropertiesCollection.driver.Navigate().GoToUrl(file.info(11));
 
             //Login through 2 pages
-            LoginPage page1 = new LoginPage();
+            LoginPage page1 = new LoginPage("user-id");
             SecureLoginPage page2 = page1.Login(file);
 
             //Make payments and submit

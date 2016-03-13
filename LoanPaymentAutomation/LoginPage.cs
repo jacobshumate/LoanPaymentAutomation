@@ -9,18 +9,11 @@ using OpenQA.Selenium.Support.UI;
 
 namespace LoanPaymentAutomation
 {
-    class LoginPage
+    public class LoginPage : PageInitialization
     {
-        
-        //Initialize Current Page Elements
-        public LoginPage()
-        {
-            //Wait for page to load
-            WebDriverWait _wait = new WebDriverWait(PropertiesCollection.driver, new TimeSpan(0, 0, 30));
-            _wait.Until(d => d.FindElement(By.Id("user-id")));
 
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
+        //Initialize Current Page Elements
+        public LoginPage(string id) : base(id) {}
 
         [FindsBy(How = How.Id, Using = "user-id")]
         public IWebElement txtUserID { get; set; }
@@ -38,7 +31,7 @@ namespace LoanPaymentAutomation
             txtPassword.SendKeys(fileObj.info(1));
             btnLogin.Submit();
 
-            return new SecureLoginPage();
+            return new SecureLoginPage("account-number");
         }
     }
 }
